@@ -106,7 +106,7 @@ export default function AboutSection() {
               <motion.div
                 key={name}
                 variants={item}
-                className="flex flex-col items-center justify-center gap-2 hover:shadow-lg transition-shadow duration-300"
+                className="flex flex-col items-center justify-center gap-6 hover:shadow-lg transition-shadow duration-300"
               >
                 <Icon className="text-4xl text-primary" title={name} />
                 <span className="font-poppins text-sm font-medium">{name}</span>
