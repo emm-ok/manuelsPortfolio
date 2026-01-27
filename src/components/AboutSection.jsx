@@ -101,7 +101,7 @@ export default function AboutSection() {
             Technologies & Tools
           </p>
 
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-4 gap-12">
             {techStack.map(({ icon: Icon, name }) => (
               <motion.div
                 key={name}
