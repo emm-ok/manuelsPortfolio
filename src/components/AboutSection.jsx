@@ -101,12 +101,12 @@ export default function AboutSection() {
             Technologies & Tools
           </p>
 
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-3 md:grid-cols-4 justify-between">
             {techStack.map(({ icon: Icon, name }) => (
               <motion.div
                 key={name}
                 variants={item}
-                className="flex flex-col items-center justify-center gap-4 p-4 mr-4 md:p-0 hover:shadow-lg transition-shadow duration-300"
+                className="flex flex-col items-center justify-center gap-4 md:p-0 hover:shadow-lg transition-shadow duration-300"
               >
                 <Icon className="text-4xl text-primary" title={name} />
                 <span className="font-poppins text-sm font-medium">{name}</span>
