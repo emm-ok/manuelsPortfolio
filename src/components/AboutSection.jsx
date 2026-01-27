@@ -43,7 +43,7 @@ const techStack = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-24 px-4 text-foreground">
+    <section id="about" className="relative py-24 px-2 text-foreground">
       <motion.div
         variants={container}
         initial="hidden"
@@ -101,12 +101,12 @@ export default function AboutSection() {
             Technologies & Tools
           </p>
 
-          <div className="grid grid-cols-4 gap-2 md:gap-4">
+          <div className="grid grid-cols-4 gap-6">
             {techStack.map(({ icon: Icon, name }) => (
               <motion.div
                 key={name}
                 variants={item}
-                className="flex flex-col items-center justify-center gap-6 hover:shadow-lg transition-shadow duration-300"
+                className="flex flex-col items-center justify-center gap-4 hover:shadow-lg transition-shadow duration-300"
               >
                 <Icon className="text-4xl text-primary" title={name} />
                 <span className="font-poppins text-sm font-medium">{name}</span>
