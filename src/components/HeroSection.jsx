@@ -26,7 +26,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center px-4"
+      className="relative min-h-screen flex items-center justify-center px-4 mt-8 md:mt-1"
     >
       <motion.div
         variants={container}
