@@ -86,20 +86,20 @@ const ProjectCarousel = () => {
                 <div className="flex gap-4 mb-4 justify-center">
                     <button
                         onClick={prevSlide}
-                        className="flex px-4 py-2 bg-gray-600/40 dark:bg-white/20 rounded-md hover:bg-black/40 dark:hover:bg-white/40 transition"
+                        className="flex px-4 py-2 bg-gray-600/20 dark:bg-white/20 rounded-md hover:bg-black/40 dark:hover:bg-white/40 transition"
                     >
                         <ChevronLeft /> Prev
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="flex px-4 py-2 bg-gray-600/40 dark:bg-white/20 rounded-md hover:bg-black/40 dark:hover:bg-white/40 transition"
+                        className="flex px-4 py-2 bg-gray-600/20 dark:bg-white/20 rounded-md hover:bg-black/40 dark:hover:bg-white/40 transition"
                     >
                         Next <ChevronRight />
                     </button>
                 </div>
 
                 {/* Motion Slide */}
-                <div className="overflow-hidden bg-gray-600/20 p-4 rounded-md">
+                <div className="overflow-hidden bg-gray-600/5 p-4 rounded-md">
                     <AnimatePresence mode="wait">
                         <motion.div
                             className="flex overflow-hidden w-full"

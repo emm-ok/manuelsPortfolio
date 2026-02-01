@@ -52,17 +52,18 @@ export default function AboutSection() {
             <motion.a
               variants={item}
               href="#contact"
-              className="cosmic-button flex items-center justify-center gap-2"
+              className="cosmic-button hover:scale-105 flex items-center justify-center gap-2"
             >
               Contact Me <ArrowRight className="w-4 h-4" />
             </motion.a>
 
             <motion.a
               variants={item}
-              href="#download"
-              className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 text-center"
+              href="./Resume1.docx"
+              download="Emmanuel_Okoosi_Frontend_Developer_CV.pdf"
+              className="px-6 py-2 rounded-xl border border-primary text-primary hover:scale-105 transition-colors duration-300 text-center"
             >
-              Download CV
+              Download Resume
             </motion.a>
           </div>
         </motion.div>
