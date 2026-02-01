@@ -1,26 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
 @import "tailwindcss";
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap");
 
+/* Google font */
 
-@import 'tailwindcss';
-
-
-
-.font-poppins { font-family: "Poppins", sans-serif; }
-.font-playfair { font-family: "Playfair Display", serif; }
-.font-bebas { font-family: "Bebas Neue", sans-serif; letter-spacing: 0.05em; }
-.font-cormorant { font-family: "Cormorant Garamond", serif; }
-.font-cinzel { font-family: "Cinzel", serif; }
+.font-space-grotesk {
+  font-family: "Space Grotesk", sans-serif;
+}
 
 /* THEME VARIABLES */
 :root {
   --color-border: hsl(224, 32%, 91%);
-  --color-background: hsl(30, 18%, 88%);
+  --color-background: hsl(0, 0%, 100%)
   --color-foreground: hsl(222, 47%, 11%);
   --color-card: hsl(0, 0%, 100%);
   --color-primary: hsl(220, 9%, 18%);
@@ -77,7 +69,7 @@ body {
 /* BUTTON CLASS */
 .cosmic-button {
   padding: 0.5rem 1.5rem;
-  border-radius: 9999px;
+  border-radius: 5px;
   background-color: var(--color-primary);
   color: var(--color-primary-foreground);
   font-weight: 500;
@@ -99,6 +91,7 @@ body {
 }
 .text-primary {
   color: var(--color-primary);
+  font-weight: 900;
 }
 .bg-background {
   background-color: var(--color-background);

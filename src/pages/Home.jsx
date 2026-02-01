@@ -7,18 +7,34 @@ import ProjectsSection from '../components/ProjectSection'
 import ContactSection from '../components/ContactSection'
 import Footer from '../components/Footer'
 import BackToTop from '../components/BackToTop'
+import SideBar from '../components/SideBar'
+import SkillSection from '../components/SkillSection'
 
 const Home = () => {
   return (
-    <div>
-        <AnimatedBackground />
-        <Navbar />
-        <HeroSection />
-        <AboutSection />
-        <ProjectsSection />
-        <ContactSection />
-        <Footer />
-        <BackToTop />
+    <div className="font-space-grotesk min-h-screen w-full">
+      <AnimatedBackground />
+
+      <div className="mt-20 px-6">
+        <div className="flex flex-col md:flex-row gap-8 w-full">
+          
+          <div className="md:w-1/3 w-full">
+            <SideBar />
+          </div>
+
+          <div className="md:w-2/3 w-full">
+            <Navbar />
+            <HeroSection />
+            <AboutSection />
+            <SkillSection />
+            <ProjectsSection />
+            <ContactSection />
+            <Footer />
+            <BackToTop />
+          </div>
+
+        </div>
+      </div>
     </div>
   )
 }
