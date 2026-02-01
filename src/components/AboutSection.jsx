@@ -59,7 +59,7 @@ export default function AboutSection() {
 
             <motion.a
               variants={item}
-              href="./Resume1.docx"
+              href="./Resume1.pdf"
               download="Emmanuel_Okoosi_Frontend_Developer_CV.pdf"
               className="px-6 py-2 rounded-xl border border-primary text-primary hover:scale-105 transition-colors duration-300 text-center"
             >

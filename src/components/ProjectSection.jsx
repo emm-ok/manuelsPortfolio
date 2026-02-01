@@ -98,7 +98,7 @@ const ProjectCarousel = () => {
                     </button>
                 </div>
 
-                {/* Motion Slide */}
+                {/* Motion Slide */}n
                 <div className="overflow-hidden bg-gray-600/5 p-4 rounded-md">
                     <AnimatePresence mode="wait">
                         <motion.div
