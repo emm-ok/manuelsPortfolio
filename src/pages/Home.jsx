@@ -16,13 +16,13 @@ const Home = () => {
       <AnimatedBackground />
 
       <div className="mt-20 px-6">
-        <div className="flex flex-col md:flex-row gap-8 w-full">
+        <div className="flex flex-col md:flex-row justify-between gap-16 w-full">
           
-          <div className="md:w-1/3 w-full">
+          <div className="md:w-1/4 w-full">
             <SideBar />
           </div>
 
-          <div className="md:w-2/3 w-full">
+          <div className="w-full">
             <Navbar />
             <HeroSection />
             <AboutSection />
