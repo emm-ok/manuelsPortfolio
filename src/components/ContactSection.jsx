@@ -65,37 +65,46 @@ const ContactSection = () => {
           className="flex-1 p-6 rounded-xl shadow-lg"
         >
           <h3 className="text-xl md:text-2xl font-bold mb-6">Send a Message</h3>
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-            <motion.input
-              variants={item}
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your Name"
-              required
-              className="px-4 py-2 rounded-lg border border-gray-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary transition"
-            />
-            <motion.input
-              variants={item}
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Your Email"
-              required
-              className="px-4 py-2 rounded-lg border border-gray-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary transition"
-            />
-            <motion.textarea
-              variants={item}
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Your Message"
-              rows={5}
-              required
-              className="px-4 py-2 rounded-lg border border-gray-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary transition resize-none"
-            />
+          <form className="flex flex-col gap-4 items-center" onSubmit={handleSubmit}>
+            <label className="w-full flex flex-col gap-2 items-start ">
+              Name
+              <input
+                variants={item}
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="John Doe"
+                required
+                className="w-full px-4 py-2 rounded-lg border border-gray-600/40 bg-transparent focus:outline-none focus:ring-2 focus:ring-foreground transition"
+              />
+            </label>
+            <label className="w-full flex flex-col gap-2 items-start ">
+              Email
+              <input
+                variants={item}
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="example@gmai.com"
+                required
+                className="w-full px-4 py-2 rounded-lg border border-gray-600/40 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary transition"
+              />
+            </label>
+            <label className="w-full flex flex-col gap-2 items-start ">
+              Message
+              <textarea
+                variants={item}
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Message..."
+                rows={5}
+                required
+                className="w-full px-4 py-2 rounded-lg border border-gray-600/40 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary transition resize-none"
+              />
+            </label>
             <motion.button
               variants={item}
               type="submit"
