@@ -12,17 +12,20 @@ import SkillSection from '../components/SkillSection'
 
 const Home = () => {
   return (
-    <div className="font-space-grotesk min-h-screen w-full">
+    <div className="font-space-grotesk w-full">
       <AnimatedBackground />
 
-      <div className="mt-20 px-6">
-        <div className="flex flex-col md:flex-row justify-between gap-16 w-full">
+      <div className="mt-20">
+        <div className="flex flex-col justify-between">
           
-          <div className="md:w-1/4 w-full">
+          <div className="hidden lg:block fixed top-20 right-20 w-fit bg-white/3- backdrop-blur-md shadow-md rounded-md p-4 z-50">
+            <SideBar />
+          </div>
+          <div className="lg:hidden">
             <SideBar />
           </div>
 
-          <div className="w-full">
+          <div className="">
             <Navbar />
             <HeroSection />
             <AboutSection />

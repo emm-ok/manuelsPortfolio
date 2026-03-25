@@ -35,7 +35,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-screen py-24 flex flex-col items-start justify-start"
+      className="min-h-screen py-24 flex flex-col items-start"
     >
       <motion.div
         variants={container}

@@ -29,7 +29,7 @@ const SideBar = () => {
       variants={container}
       initial="hidden"
       animate="show"
-      className="sticky top-24 translate-y-1/2 flex flex-col gap-6 rounded-2xl"
+      className="flex flex-col gap-6 rounded-2xl"
     >
       {/* <motion.div variants={item} className="flex justify-center">
         <div className="w-32 h-32 rounded-full bg-gray-300" />
