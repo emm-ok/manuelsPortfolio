@@ -49,7 +49,7 @@ export default function HeroSection() {
           <div className="mt-2 text-2xl md:text-5xl">
             A{" "}
             <ReactTyped
-              strings={["Frontend Engineer", "React Developer", "Backend Developer"]}
+              strings={["Fullstack Developer","Frontend Engineer", "React Developer", "Backend Developer"]}
               typeSpeed={60}
               backSpeed={40}
               loop
