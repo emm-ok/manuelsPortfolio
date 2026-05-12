@@ -15,6 +15,16 @@ const projects = [
     },
     {
         id: 2,
+        title: "Neominds EduTech Ltd",
+        description:
+            "Neominds Edutech Ltd: A platform that helps startups and struggling businesses discover, access, and use services that help them grow, recover, and scale.",
+        image: "/projects/project7.png",
+        tags: ["NextJs", "React", "Tailwind", "Typescript", "NodeJs", "PostgreSQL", "Prisma ORM"],
+        demoUrl: "https://neominds-builders-guide.vercel.app/",
+        githubUrl: "https://github.com/emm-ok/Neominds-Builders-Guide",
+    },
+    {
+        id: 3,
         title: "CSHub",
         description:
             "Next.js + Sanity CMS e-commerce store. Clean, fast, and responsive, offering smooth browsing and purchasing experience.",
@@ -24,7 +34,7 @@ const projects = [
         githubUrl: "https://github.com/emm-ok/CSHub-Sanity-NextJS-Store",
     },
     {
-        id: 3,
+        id: 4,
         title: "Verto",
         description:
             "Startup hub platform for entrepreneurs to showcase products, connect with investors, and build early-stage networks.",
@@ -34,7 +44,7 @@ const projects = [
         githubUrl: "https://github.com/emm-ok/Startup-Web-App",
     },
     {
-        id: 4,
+        id: 5,
         title: "PhotoPro",
         description:
             "Sleek photography platform to showcase visual work with minimal design, smooth interactions, and optimized performance.",
