@@ -18,12 +18,12 @@ const Home = () => {
       <div className="mt-20">
         <div className="flex flex-col justify-between">
           
-          <div className="hidden lg:block fixed top-20 right-20 w-fit bg-white/3- backdrop-blur-md shadow-md rounded-md p-4 z-50">
-            <SideBar />
-          </div>
-          <div className="lg:hidden">
-            <SideBar />
-          </div>
+          <div className="hidden lg:flex fixed left-8 top-1/2 -translate-y-1/2 z-50">
+        <SideBar />
+      </div>
+      <div className="lg:hidden fixed top-5 right-5 z-50">
+        <SideBar />
+      </div>
 
           <div className="">
             <Navbar />

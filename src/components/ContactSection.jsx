@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Send, Linkedin, Twitter, Instagram, Facebook, MailIcon } from "lucide-react";
-import { useState } from "react";
+import { ArrowUpRight, Github, Linkedin, Mail, Send, Twitter } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -13,121 +12,139 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
 };
+
+const contactLinks = [
+  {
+    title: "LinkedIn",
+    description: "Let's connect professionally",
+    icon: Linkedin,
+    link: "https://www.linkedin.com/in/emm-ok",
+  },
+  {
+    title: "GitHub",
+    description: "Explore my engineering work",
+    icon: Github,
+    link: "https://github.com/emm-ok",
+  },
+  {
+    title: "Email",
+    description: "Start a conversation",
+    icon: Mail,
+    link: "mailto:okoosiemmanuel@gmail.com",
+  },
+  {
+    title: "Twitter",
+    description: "Connect on X",
+    icon: Twitter,
+    link: "https://x.com/EOkoosi77762",
+  },
+];
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormData({ name: "", email: "", message: "" });
-  };
-
   return (
-    <section id="contact" className="min-h-screen py-24 text-foreground">
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
-        className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12"
-      >
-        {/* Left: Info & Socials */}
-        <motion.div
-          variants={item}
-          className="flex-1 flex flex-col gap-6"
-        >
-          <h2 className="text-sm tracking-widest text-primary uppercase mb-2">
-            Let's <span className="text-primary font-bold">Connect</span>
-          </h2>
-          <p className="text-muted-foreground text-lg md:text-xl mb-6">
-            Have a project idea, a question, or just want to say hi? I’m always open to collaborate or chat about tech, design, or ideas.
-          </p>
+    <motion.section
+      id="contact"
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      className="max-w-6xl mx-auto py-24"
+    >
+      <motion.div variants={item} className="text-center mb-16">
+        <p className="text-primary uppercase tracking-[0.3em] text-sm mb-4">
+          Contact
+        </p>
 
-          <div className="flex gap-4 justify-center">
-            <SocialIcon icon={<Linkedin size={32} />} link="https://www.linkedin.com/in/emm-ok" />
-            <SocialIcon icon={<Twitter size={32} />} link="https://x.com/EOkoosi77762" />
-            <SocialIcon icon={<Instagram size={32} />} link="https://www.instagram.com/_jayboy_k/" />
-            <SocialIcon icon={<Facebook size={32} />} link="https://web.facebook.com/emmanuel.okoosi.5/" />
-            <SocialIcon icon={<MailIcon size={32} />} link="mailto:okoosiemmanuel@gmail.com" />
-          </div>
-        </motion.div>
+        <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+          Let's Build Something{" "}
+          <span className="text-primary">
+            Meaningful Together
+          </span>
+        </h2>
 
-        {/* Right: Contact Form */}
-        <motion.div
-          variants={item}
-          className="flex-1 p-6 rounded-xl shadow-lg"
-        >
-          <h3 className="text-xl md:text-2xl font-bold mb-6">Send a Message</h3>
-          <form className="flex flex-col gap-4 items-center" onSubmit={handleSubmit}>
-            <label className="w-full flex flex-col gap-2 items-start ">
-              Name
-              <input
-                variants={item}
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="John Doe"
-                required
-                className="w-full px-4 py-2 rounded-lg border border-gray-600/40 bg-transparent focus:outline-none focus:ring-2 focus:ring-foreground transition"
-              />
-            </label>
-            <label className="w-full flex flex-col gap-2 items-start ">
-              Email
-              <input
-                variants={item}
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="example@gmai.com"
-                required
-                className="w-full px-4 py-2 rounded-lg border border-gray-600/40 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary transition"
-              />
-            </label>
-            <label className="w-full flex flex-col gap-2 items-start ">
-              Message
-              <textarea
-                variants={item}
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Message..."
-                rows={5}
-                required
-                className="w-full px-4 py-2 rounded-lg border border-gray-600/40 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary transition resize-none"
-              />
-            </label>
-            <motion.button
-              variants={item}
-              type="submit"
-              className="mt-2 flex items-center justify-center gap-2 border px-6 py-3 rounded-lg font-semibold hover:scale-105 transition"
-            >
-              <Send size={18} /> Send Message
-            </motion.button>
-          </form>
-        </motion.div>
+        <p className="mt-5 max-w-2xl mx-auto text-muted-foreground text-base md:text-lg">
+          I'm always interested in building thoughtful digital products,
+          collaborating with talented teams, and solving challenging problems
+          through clean and scalable engineering.
+        </p>
       </motion.div>
-    </section>
+
+      <motion.div
+        variants={item}
+        className="relative overflow-hidden rounded-3xl border border-gray-200 bg-gradient-to-br from-primary/10 via-transparent to-transparent p-8 md:p-12"
+      >
+        <div className="absolute -top-20 -right-20 size-72 bg-primary/20 blur-[120px]" />
+
+        <div className="relative flex flex-col md:flex-row items-center justify-between gap-10">
+          <div className="max-w-xl text-center md:text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm mb-6">
+              <span className="size-2 rounded-full bg-green-500 animate-pulse" />
+              Available for new opportunities
+            </div>
+
+            <h3 className="text-2xl md:text-4xl font-bold">
+              Have an idea or project in mind?
+            </h3>
+
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Whether you need a full-stack application, a scalable platform,
+              or help transforming an idea into a polished product, I'd love
+              to hear about it.
+            </p>
+
+            <a
+              href="mailto:okoosiemmanuel@gmail.com"
+              target="_blank"
+              className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl bg-gray-400/50 text-primary-foregraound font-semibold hover:scale-105 transition"
+            >
+              Start a Conversation
+              <Send size={18} />
+            </a>
+          </div>
+
+          <div className="grid gap-4 w-full md:w-auto">
+            {contactLinks.map(({ title, description, icon: Icon, link }) => (
+              <motion.a
+                key={title}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03 }}
+                className="flex items-center gap-4 p-4 rounded-2xl border border-gray-200 bg-background/40 backdrop-blur-sm hover:border-primary/50 transition"
+              >
+                <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Icon className="text-primary" size={22} />
+                </div>
+
+                <div className="flex-1">
+                  <h4 className="font-semibold">
+                    {title}
+                  </h4>
+
+                  <p className="text-sm text-muted-foreground">
+                    {description}
+                  </p>
+                </div>
+
+                <ArrowUpRight
+                  size={18}
+                  className="text-muted-foreground"
+                />
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </motion.section>
   );
 };
-
-const SocialIcon = ({ icon, link }) => (
-  <a
-    href={link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-muted-foreground hover:text-primary transition"
-  >
-    {icon}
-  </a>
-);
 
 export default ContactSection;
