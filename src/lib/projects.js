@@ -5,7 +5,7 @@ export const projects = [
     category: "Real-time Communication Platform",
     featured: true,
 
-    image: "/projects/syncspace.png",
+    image: "/projects/syncspace-Img2.png",
 
     shortDescription:
       "A modern real-time chat platform designed for seamless communication with secure authentication, online presence, and instant messaging.",

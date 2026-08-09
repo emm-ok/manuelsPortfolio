@@ -44,7 +44,7 @@ function ProjectModal({ project, onClose }) {
 
           {/* HERO IMAGE */}
 
-          <div className="relative h-[320px] overflow-hidden">
+          <div className="relative h-[320px] overflow-hidden space-y-10">
 
             <img
               src={project.image}
@@ -52,16 +52,16 @@ function ProjectModal({ project, onClose }) {
               className="w-full h-full object-cover"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent"/>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/40 w-full h-full"/>
 
 
             <div className="absolute bottom-8 left-8">
 
-              <span className="text-primary text-sm uppercase tracking-widest">
+              <span className="text-gray-300 text-sm uppercase tracking-widest">
                 {project.category}
               </span>
 
-              <h2 className="text-4xl md:text-5xl font-bold mt-3">
+              <h2 className="text-white text-4xl md:text-5xl font-bold mt-3">
                 {project.title}
               </h2>
 
@@ -85,7 +85,7 @@ function ProjectModal({ project, onClose }) {
                 title="Project Overview"
               />
 
-              <p className="text-muted-foreground leading-relaxed text-lg">
+              <p className="text-gray-600 leading-relaxed text-lg">
                 {project.description}
               </p>
 
@@ -103,7 +103,7 @@ function ProjectModal({ project, onClose }) {
                 title="My Role"
               />
 
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 {project.role}
               </p>
 
@@ -151,7 +151,7 @@ function ProjectModal({ project, onClose }) {
                 {project.features.map((feature)=>(
                   <div
                     key={feature}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-secondary/40"
+                    className="flex items-start gap-3 p-4 rounded-xl bg-secondary/40 text-gray-600"
                   >
 
                     <CheckCircle2
@@ -218,7 +218,7 @@ function ProjectModal({ project, onClose }) {
                 {project.challenges.map((challenge)=>(
                   <li
                     key={challenge}
-                    className="flex gap-3 text-muted-foreground"
+                    className="flex gap-3 text-gray-600"
                   >
 
                     <span className="text-primary">
@@ -254,7 +254,7 @@ function ProjectModal({ project, onClose }) {
                 {project.technologies.map((tech)=>(
                   <span
                     key={tech}
-                    className="px-4 py-2 rounded-full border border-border text-sm hover:border-primary hover:text-primary transition"
+                    className="px-4 py-2 rounded-full border text-gray-600 text-sm hover:text-primary transition"
                   >
                     {tech}
                   </span>
@@ -279,7 +279,7 @@ function ProjectModal({ project, onClose }) {
                 <a
                   href={project.github}
                   target="_blank"
-                  className="px-6 py-3 rounded-xl border border-border flex items-center gap-2 hover:bg-primary hover:text-black transition"
+                  className="px-6 py-3 rounded-xl border border-gray-300 text-gray-800 flex items-center gap-2 hover:bg-primary hover:text-black transition"
                 >
 
                   <Github size={18}/>
@@ -331,7 +331,7 @@ function SectionTitle({icon,title}) {
         {icon}
       </div>
 
-      <h3 className="text-xl font-semibold">
+      <h3 className="text-xl font-semibold text-gray-600">
         {title}
       </h3>
 
@@ -356,7 +356,7 @@ function InfoCard({title,icon,text}) {
       </div>
 
 
-      <p className="text-muted-foreground leading-relaxed">
+      <p className="text-gray-600 leading-relaxed">
         {text}
       </p>
 
