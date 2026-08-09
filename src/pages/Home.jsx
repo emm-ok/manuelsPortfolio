@@ -14,7 +14,7 @@ import DownBar from "../components/DownBar";
 
 const Home = () => {
   return (
-    <main className="relative min-h-screen overflow-x-hidden">
+    <main className="font-space-grotesk relative min-h-screen overflow-x-hidden">
       {/* BACKGROUND */}
       <AnimatedBackground />
 
@@ -24,7 +24,7 @@ const Home = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="relative min-w-0">
+      <div className="relative min-w-0 scroll-mt-18">
         <Navbar />
         <HeroSection />
         <AboutSection />
