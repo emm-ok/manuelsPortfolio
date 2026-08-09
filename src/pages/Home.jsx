@@ -24,7 +24,7 @@ const Home = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="relative min-w-0 scroll-mt-18">
+      <div className="relative min-w-0">
         <Navbar />
         <HeroSection />
         <AboutSection />

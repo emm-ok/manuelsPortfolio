@@ -41,7 +41,7 @@ const Stat = ({ value, label }) => (
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center">
+    <section id="hero" className="relative min-h-screen flex items-center scroll-mt-20">
       <motion.div variants={container} initial="hidden" animate="show" className="flex flex-col items-start w-full max-w-5xl space-y-7">
         <motion.div variants={item} className="text-left space-y-3">
           <p className="text-muted-foreground text-lg">
