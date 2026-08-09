@@ -1,11 +1,16 @@
+"use client";
+
 import {
   Github,
   Instagram,
   Linkedin,
   Mail,
   ArrowUpRight,
+  PanelBottomClose,
+  PanelBottomOpen,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 const container = {
   hidden: {
@@ -94,188 +99,272 @@ const SocialIcon = ({
 );
 
 const DownBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <motion.aside
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="
-        mx-auto w-full max-w-6xl
-        overflow-hidden
-        rounded-3xl
-        border border-white/10
-        bg-background/40
-        p-3
-        shadow-2xl
-        backdrop-blur-xl
-        sm:p-4
-      "
-    >
-      <div
+    <>
+      {/* TOGGLE BUTTON */}
+      <motion.button
+        type="button"
+        onClick={() => setIsOpen((prev) => !prev)}
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.94 }}
+        aria-label={isOpen ? "Hide navigation" : "Show navigation"}
+        aria-expanded={isOpen}
         className="
-          flex min-w-0
-          flex-col
-          gap-4
-          sm:flex-row
-          sm:flex-wrap
-          sm:items-center
-          sm:justify-between
+          fixed
+          bottom-5
+          right-5
+          z-[110]
+          flex
+          size-12
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-white/10
+          bg-background/80
+          text-foreground
+          shadow-xl
+          backdrop-blur-xl
+          transition-all
+          duration-300
+          hover:bg-primary
+          hover:text-primary-foreground
+          sm:bottom-6
+          sm:right-6
         "
       >
-        {/* PROFILE */}
-        <motion.div
-          variants={item}
-          className="
-            flex min-w-0
-            items-center
-            gap-3
-          "
-        >
-          {/* AVATAR */}
-          <div
+        {isOpen ? (
+          <PanelBottomClose size={20} />
+        ) : (
+          <PanelBottomOpen size={20} />
+        )}
+      </motion.button>
+
+      {/* BOTTOM NAVIGATION */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.aside
+            variants={container}
+            initial="hidden"
+            animate="show"
+            exit={{
+              opacity: 0,
+              y: 30,
+              transition: {
+                duration: 0.25,
+              },
+            }}
             className="
-              flex size-11
-              shrink-0
-              items-center justify-center
-              rounded-full
-              bg-primary/10
-              text-sm
-              font-bold
-              text-primary
+              fixed
+              inset-x-0
+              bottom-0
+              z-[100]
+              px-3
+              pb-[max(0.75rem,env(safe-area-inset-bottom))]
+              pointer-events-none
             "
           >
-            EO
-          </div>
-
-          {/* INFO */}
-          <div className="min-w-0">
-            <div className="truncate font-semibold">
-              Emmanuel Okoosi
-            </div>
-
-            <div className="truncate text-sm text-muted-foreground">
-              Fullstack Engineer
-            </div>
-          </div>
-        </motion.div>
-
-        {/* AVAILABILITY */}
-        <motion.div
-          variants={item}
-          className="
-            flex shrink-0
-            items-center gap-2
-            rounded-full
-            border border-emerald-500/20
-            bg-emerald-500/10
-            px-3 py-2
-            text-xs font-medium
-            text-emerald-500
-          "
-        >
-          <span className="relative flex size-2">
-            <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
-          </span>
-
-          Available for work
-        </motion.div>
-
-        {/* SOCIALS */}
-        <motion.div
-          variants={item}
-          className="
-            flex min-w-0
-            items-center
-            gap-2
-            overflow-x-auto
-            pb-1
-            sm:overflow-visible
-            sm:pb-0
-          "
-        >
-          {socials.map((social) => (
-            <SocialIcon
-              key={social.name}
-              icon={social.icon}
-              link={social.link}
-              name={social.name}
-            />
-          ))}
-        </motion.div>
-
-        {/* ACTIONS */}
-        <motion.div
-          variants={item}
-          className="
-            flex
-            w-full
-            flex-wrap
-            gap-2
-            sm:w-auto
-            sm:shrink-0
-          "
-        >
-          <a
-            href="#projects"
-            onClick={() => console.log("clicked")}
-            className="
-              group flex
-              min-h-10
-              flex-1
-              items-center
-              justify-center
-              gap-2
-              rounded-full
-              border border-white/10
-              px-4
-              text-sm font-medium
-              transition-all duration-300
-              hover:border-primary/20
-              hover:bg-primary/10
-              hover:text-primary
-              sm:flex-none
-            "
-          >
-            <span>Projects</span>
-
-            <ArrowUpRight
-              size={15}
+            <div
               className="
-                transition-transform
-                group-hover:translate-x-0.5
-                group-hover:-translate-y-0.5
+                pointer-events-auto
+                mx-auto
+                w-full
+                max-w-6xl
+                overflow-hidden
+                rounded-3xl
+                border
+                border-white/10
+                bg-background/80
+                p-3
+                shadow-2xl
+                backdrop-blur-xl
+                sm:p-4
               "
-            />
-          </a>
+            >
+              <div
+                className="
+                  flex
+                  min-w-0
+                  flex-col
+                  gap-4
+                  sm:flex-row
+                  sm:flex-wrap
+                  sm:items-center
+                  sm:justify-between
+                "
+              >
+                {/* PROFILE */}
+                <motion.div
+                  variants={item}
+                  className="
+                    flex
+                    min-w-0
+                    items-center
+                    gap-3
+                  "
+                >
+                  <div
+                    className="
+                      flex
+                      size-11
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-primary/10
+                      text-sm
+                      font-bold
+                      text-primary
+                    "
+                  >
+                    EO
+                  </div>
 
-          <a
-            href="#contact"
-            className="
-              group flex
-              min-h-10
-              flex-1
-              items-center
-              justify-center
-              gap-2
-              rounded-full
-              bg-gray-200
-              text-gray-600
-              px-4
-              text-sm
-              font-medium
-              transition-all duration-300
-              hover:opacity-90
-              sm:flex-none
-            "
-          >
-            <Mail size={15} />
+                  <div className="min-w-0">
+                    <div className="truncate font-semibold">
+                      Emmanuel Okoosi
+                    </div>
 
-            <span>Contact Me</span>
-          </a>
-        </motion.div>
-      </div>
-    </motion.aside>
+                    <div className="truncate text-sm text-muted-foreground">
+                      Fullstack Engineer
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* AVAILABILITY */}
+                <motion.div
+                  variants={item}
+                  className="
+                    flex
+                    shrink-0
+                    items-center
+                    gap-2
+                    rounded-full
+                    border
+                    border-emerald-500/20
+                    bg-emerald-500/10
+                    px-3
+                    py-2
+                    text-xs
+                    font-medium
+                    text-emerald-500
+                  "
+                >
+                  <span className="relative flex size-2">
+                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+                  </span>
+
+                  Available for work
+                </motion.div>
+
+                {/* SOCIALS */}
+                <motion.div
+                  variants={item}
+                  className="
+                    flex
+                    min-w-0
+                    items-center
+                    gap-2
+                    overflow-x-auto
+                    pb-1
+                    sm:overflow-visible
+                    sm:pb-0
+                  "
+                >
+                  {socials.map((social) => (
+                    <SocialIcon
+                      key={social.name}
+                      icon={social.icon}
+                      link={social.link}
+                      name={social.name}
+                    />
+                  ))}
+                </motion.div>
+
+                {/* ACTIONS */}
+                <motion.div
+                  variants={item}
+                  className="
+                    flex
+                    w-full
+                    flex-wrap
+                    gap-2
+                    sm:w-auto
+                    sm:shrink-0
+                  "
+                >
+                  <a
+                    href="#projects"
+                    className="
+                      group
+                      flex
+                      min-h-10
+                      flex-1
+                      items-center
+                      justify-center
+                      gap-2
+                      rounded-full
+                      border
+                      border-white/10
+                      px-4
+                      text-sm
+                      font-medium
+                      transition-all
+                      duration-300
+                      hover:border-primary/20
+                      hover:bg-primary/10
+                      hover:text-primary
+                      sm:flex-none
+                    "
+                  >
+                    <span>Projects</span>
+
+                    <ArrowUpRight
+                      size={15}
+                      className="
+                        transition-transform
+                        group-hover:translate-x-0.5
+                        group-hover:-translate-y-0.5
+                      "
+                    />
+                  </a>
+
+                  <a
+                    href="#contact"
+                    className="
+                      group
+                      flex
+                      min-h-10
+                      flex-1
+                      items-center
+                      justify-center
+                      gap-2
+                      rounded-full
+                      bg-gray-200
+                      px-4
+                      text-sm
+                      font-medium
+                      text-gray-600
+                      transition-all
+                      duration-300
+                      hover:bg-gray-300
+                      sm:flex-none
+                    "
+                  >
+                    <Mail size={15} />
+
+                    <span>Contact Me</span>
+                  </a>
+                </motion.div>
+              </div>
+            </div>
+          </motion.aside>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
