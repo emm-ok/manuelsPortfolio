@@ -112,7 +112,7 @@ function ProjectSection() {
 
 
                             {/* CONTENT */}
-                            <div className="p-8 lg:p-12 flex flex-col justify-center">
+                            <div className="px-2 py-4 lg:p-12 flex flex-col justify-center">
 
                                 <div className="flex items-center gap-2 text-primary text-sm mb-4">
                                     <Layers size={16} />
@@ -148,18 +148,18 @@ function ProjectSection() {
                                         onClick={() => setSelectedProject(featuredProject)}
                                         className="cosmic-button flex items-center gap-2"
                                     >
-                                        View Case Study
+                                        Explore Details
                                         <ArrowUpRight size={18} />
                                     </button>
 
 
                                     <a
-                                        href={featuredProject.github}
+                                        href={featuredProject.demo}
                                         target="_blank"
                                         className="px-5 py-3 rounded-xl border border-border flex items-center gap-2 hover:bg-primary hover:text-black transition"
                                     >
-                                        <Github size={18} />
-                                        Github
+                                        <ExternalLink size={18} />
+                                        View
                                     </a>
 
                                 </div>
@@ -208,7 +208,7 @@ function ProjectSection() {
                             </div>
 
 
-                            <div className="p-6">
+                            <div className="px-4 py-6">
 
 
                                 <div className="text-primary text-sm mb-3">
