@@ -68,7 +68,6 @@ export const projects = [
       "TypeScript",
       "Tailwind CSS",
       "Node.js",
-      "PostgreSQL",
       "Prisma",
       "REST API",
       "Authentication & Authorization",
