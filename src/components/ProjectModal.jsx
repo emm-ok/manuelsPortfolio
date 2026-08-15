@@ -251,9 +251,9 @@ function ProjectModal({ project, onClose }) {
 
               <div className="flex flex-wrap gap-3 mt-5">
 
-                {project.technologies.map((tech)=>(
+                {[...new Set(project.technologies)].map((tech, index) => (
                   <span
-                    key={tech}
+                    key={`${tech}-${index}`}
                     className="px-4 py-2 rounded-full border text-gray-600 text-sm hover:text-primary transition"
                   >
                     {tech}
