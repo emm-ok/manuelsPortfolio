@@ -276,6 +276,128 @@ export const projects = [
     status: "Completed",
   },
 
+  {
+    id: "resolvehub-company",
+    title: "ResolveHub — Company Portal",
+
+    category: "Enterprise Case & Complaint Management",
+
+    image: "/projects/resolvehub-company.png",
+
+    shortDescription:
+      "An enterprise complaint-management portal that helps company teams review customer requests, manage cases, assign team members, track progress, and coordinate resolutions.",
+
+    description:
+      "ResolveHub Company Portal is a multi-tenant case-management application designed to help organizations manage customer complaints and service requests through a structured workflow. Authorized company members can review incoming requests, accept requests to create cases, reject requests with documented reasons, assign cases to team members, update case details and priorities, monitor service-level agreements, collaborate through case activities, and manage resolutions. Company membership, roles, permissions, and access control are managed through the backend, ensuring that company data and actions remain scoped to the appropriate organization. The platform provides a centralized workspace for tracking case progress, maintaining an activity history, and improving accountability throughout the complaint-resolution lifecycle.",
+
+    role: "Full-stack developer responsible for designing and implementing the company-facing case-management experience, developing REST APIs and backend services, modeling multi-tenant data with Prisma and PostgreSQL, implementing authentication and permission checks, building request-review and case-management workflows, integrating TanStack Query, and creating responsive interfaces with consistent loading, error, confirmation, and success states.",
+
+    problem:
+      "Organizations often manage complaints through disconnected communication channels, spreadsheets, and manual processes. This makes it difficult to track ownership, prioritize urgent issues, monitor resolution deadlines, maintain a reliable history of actions, and ensure that only authorized team members access or modify company records.",
+
+    solution:
+      "Built a centralized company portal that organizes incoming customer requests into a controlled review workflow and converts accepted requests into manageable cases. Company members can review requests, assign ownership, update case status and priority, escalate issues, monitor SLA information, and maintain activity records. Backend-managed company memberships, roles, and permissions enforce tenant boundaries and restrict operations according to authorization rules. Shared query management and consistent UI states keep the interface responsive and synchronized with backend changes.",
+
+    features: [
+      "Company dashboard and case overview",
+      "Company-scoped data access",
+      "Backend-managed company membership",
+      "Role-based access control",
+      "Permission-based action authorization",
+      "Incoming customer request listing",
+      "Request details and status tracking",
+      "Accept requests and automatically create cases",
+      "Reject requests with a documented reason",
+      "Case listing, search, filtering, and pagination",
+      "Case details and linked request information",
+      "Case status and priority management",
+      "Case assignment to company members",
+      "Member directory for assignment workflows",
+      "Case reassignment and unassignment",
+      "Case escalation workflow",
+      "Case activity timeline",
+      "Case comments and collaboration",
+      "Evidence upload and management",
+      "Evidence details and download workflows",
+      "Resolution proposal and review workflows",
+      "Resolution acceptance and rejection",
+      "Case closure following resolution",
+      "Case reopening where permitted",
+      "SLA policy and deadline visibility",
+      "Case ownership and assignment tracking",
+      "Audit logging for important actions",
+      "Company member listing and management",
+      "Company invitations and invitation acceptance",
+      "Role and permission enforcement",
+      "Dashboard reporting and case metrics",
+      "Consistent API validation and error handling",
+      "Loading, empty, error, and success states",
+      "Confirmation dialogs for sensitive actions",
+      "Responsive layouts for desktop, tablet, and mobile",
+      "Subtle interface animations and transitions",
+    ],
+
+    architecture: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Clerk Authentication",
+      "Backend-Managed Multi-Tenancy",
+      "Role-Based Access Control",
+      "Permission-Based Authorization",
+      "TanStack Query",
+      "Axios",
+      "Zod Validation",
+      "Service-Oriented Backend Architecture",
+      "Audit Logging",
+    ],
+
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide React",
+      "TanStack Query",
+      "Axios",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "Clerk",
+      "Zod",
+      "REST API",
+      "Docker",
+      "Git",
+      "GitHub",
+    ],
+
+    challenges: [
+      "Designing a multi-tenant architecture that isolates company records and prevents unauthorized cross-company access",
+      "Implementing backend-managed memberships, roles, and permissions without relying on Clerk Organizations for company tenancy",
+      "Designing a controlled request-review workflow that converts accepted customer requests into cases",
+      "Keeping frontend actions aligned with backend permissions and valid case-state transitions",
+      "Building reliable case assignment, reassignment, and unassignment workflows",
+      "Managing concurrent case operations and preserving consistent assignment and activity records",
+      "Connecting case details, assignments, member directories, SLA information, and activity timelines across multiple API endpoints",
+      "Ensuring that escalation, resolution, closure, and reopening follow the appropriate business rules",
+      "Maintaining traceable activity and audit records for important case-management operations",
+      "Handling asynchronous mutations, stale query data, failed requests, and duplicate submissions",
+      "Designing reusable loading, empty, error, and confirmation states for a consistent user experience",
+      "Building responsive interfaces that support complex workflows without overwhelming company members",
+    ],
+
+    github: "https://github.com/emm-ok/ResolveHub",
+
+    demo: "https://resolve-hub-4lce.vercel.app/dashboard",
+
+    status: "In Development",
+  },
+
   // {
   //   id: "resolvehub",
   //   title: "ResolveHub",
@@ -512,6 +634,118 @@ export const projects = [
     github: "https://github.com/emm-ok/BeautyHub",
 
     demo: "https://beauty-hub-ebon.vercel.app",
+
+    status: "Completed",
+  },
+
+  {
+    id: "resolvehub-customer",
+    title: "ResolveHub — Customer Portal",
+
+    category: "Customer Support & Complaint Management",
+
+    image: "/projects/resolvehub-customer.png",
+
+    shortDescription:
+      "A customer-facing portal that allows users to submit complaints and service requests to companies, attach supporting evidence, and track request and case progress.",
+
+    description:
+      "ResolveHub Customer Portal is a customer-facing application designed to make complaint submission and resolution tracking more transparent and organized. Authenticated customers can discover available companies, select the organization they want to contact, submit a complaint or service request through a structured form, and optionally attach supporting evidence. Submitted requests are stored and routed into the selected company's review workflow, where authorized team members can assess the request and decide whether to accept or reject it. Accepted requests become cases that can be managed through the resolution lifecycle. The customer experience is designed around clear forms, accessible request information, reliable submission feedback, and a straightforward way to follow the progress of submitted issues.",
+
+    role: "Full-stack developer responsible for implementing the customer request-submission workflow, integrating Clerk authentication with the application backend, connecting company discovery and request APIs, building validated forms and evidence-upload interactions, managing server state with TanStack Query, and designing responsive customer-facing interfaces with clear loading, error, and success feedback.",
+
+    problem:
+      "Customers may struggle to identify the correct channel for submitting complaints, provide the information a company needs to investigate an issue, and understand what happens after a complaint is submitted. Unstructured communication can lead to incomplete reports, repeated explanations, poor visibility into progress, and uncertainty about whether a request has been received or reviewed.",
+
+    solution:
+      "Built a structured customer portal that connects authenticated users with available companies and provides a guided request-submission workflow. Customers select a company, complete a form with relevant complaint or service-request details, and optionally attach supporting evidence. The backend validates the request, associates it with the authenticated user and selected company, and makes it available to the company's review workflow. The interface provides clear validation, submission feedback, request-status visibility, and a foundation for tracking accepted requests through case resolution.",
+
+    features: [
+      "Customer authentication using Clerk",
+      "Authenticated customer access",
+      "Available company listing",
+      "Company selection before submission",
+      "Company-specific request submission",
+      "Structured complaint and service-request form",
+      "Automatic population of available customer details",
+      "Request title and description validation",
+      "Optional supporting evidence upload",
+      "Clear field-level validation feedback",
+      "Submission loading and disabled states",
+      "Duplicate-submission prevention",
+      "Request submission confirmation",
+      "Request number and submission metadata",
+      "Customer request listing",
+      "Request details and status display",
+      "Request submission and update timestamps",
+      "Request review-status visibility",
+      "Rejection-reason visibility where applicable",
+      "Accepted request and linked case workflow",
+      "Case status and progress visibility where supported",
+      "Evidence and attachment access where authorized",
+      "Empty states when no requests exist",
+      "Retry actions for recoverable API errors",
+      "Authentication-aware protected routes",
+      "Consistent API error handling",
+      "Responsive layouts for desktop, tablet, and mobile",
+      "Accessible form controls and interaction feedback",
+      "Subtle animations and transitions",
+    ],
+
+    architecture: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Clerk Authentication",
+      "Authenticated Request Ownership",
+      "TanStack Query",
+      "Axios",
+      "Zod Validation",
+      "Evidence Upload Workflow",
+      "Backend Request Validation",
+    ],
+
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide React",
+      "TanStack Query",
+      "Axios",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "Clerk",
+      "Zod",
+      "REST API",
+      "Docker",
+      "Git",
+      "GitHub",
+    ],
+
+    challenges: [
+      "Connecting authenticated customer identities to backend user records without trusting identity values supplied by the client",
+      "Designing a clear company-selection and request-submission workflow",
+      "Validating customer input consistently across frontend and backend boundaries",
+      "Ensuring each request is associated with the correct authenticated customer and selected company",
+      "Handling optional evidence uploads without disrupting the core submission process",
+      "Preventing duplicate submissions during slow network requests",
+      "Keeping request status and details synchronized with company review actions",
+      "Communicating validation failures, server errors, and successful submissions clearly",
+      "Protecting customer information and ensuring users can only access records they are authorized to view",
+      "Designing a simple experience that remains usable across desktop and mobile devices",
+      "Preparing the customer experience to support case tracking and resolution workflows as the platform develops",
+    ],
+
+    github: "https://github.com/emm-ok/ResolveHub",
+
+    demo: "https://resolve-hub-theta.vercel.app/dashboard",
 
     status: "Completed",
   },
